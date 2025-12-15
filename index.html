@@ -20,7 +20,7 @@
 </head>
 <body class="bg-slate-900 text-white min-h-screen">
     
-    <script src="script.js"></script>
+    
     
     <div id="app" class="fade-in"></div>    
     <script>
@@ -74,15 +74,8 @@
 
             { id: 24, text: "Em um Teste de Penetração (PenTest), o tipo Black Box é caracterizado por:", options: ["Apenas os analistas internos da organização realizarem o teste.", "O ataque partir do princípio de que o agente externo não tem conhecimento da estrutura da organização, atacando (às cegas).", "O testador ter conhecimento parcial do sistema, como credenciais de um usuário comum.", "O testador ter acesso a todas as informações, código-fonte e infraestrutura do sistema."], correct: 1 },
 
-                   
-            
-            
-            
-            
-            
-            //{ id: 16, text: "", options: ["", "", "", ""], correct: 2 },
-
-            
+                        
+            //{ id: 16, text: "", options: ["", "", "", ""], correct: 2 }, 
 
         ];
 
@@ -189,7 +182,7 @@
                     
                     <div class="bg-gradient-to-r from-green-600 to-green-400 p-8 text-center">
                         
-                        <img src="/logosemfundo.png" class="mx-auto mb-4" style="width:200px; height:auto;">
+                        <img src="./logosemfundo.png" class="mx-auto mb-4" style="width:200px; height:auto;">
 
                         <h1 class="text-3xl font-bold">Cyber School Prime</h1>
                         <p class="text-blue-100 mt-2">PROZ - Treinamento de Segurança</p>
@@ -222,7 +215,7 @@
             return `
             <div class="bg-slate-800 border-b border-slate-700 p-4 flex justify-between items-center sticky top-0 z-50 shadow-md">
                 <div class="flex items-center gap-3">
-                    <div class="from-slate-900 to-slate-700 p-2 rounded-lg"><img src="/logosemfundo.png" class="mx-auto mb-4" style="width:100px; height:auto;"></div>
+                    <div class="from-slate-900 to-slate-700 p-2 rounded-lg"><img src="./logosemfundo.png" class="mx-auto mb-4" style="width:100px; height:auto;"></div>
                     <div>
                          
 
@@ -255,15 +248,28 @@
                 </div>` : '';
 
             // Card Helper
+
+            const colorMap = {
+                purple: 'bg-purple-600 hover:bg-purple-500 text-white',
+                orange: 'bg-orange-600 hover:bg-orange-500 text-white',
+                blue: 'bg-blue-600 hover:bg-blue-500 text-white'
+            };
+
+            const cardColorMap = {
+                purple: 'bg-purple-900/50 text-purple-400',
+                orange: 'bg-orange-900/50 text-orange-400',
+                blue: 'bg-blue-900/50 text-blue-400'
+            };
+
             const renderCard = (id, title, desc, color, icon, isDone) => {
                 const borderColor = isDone ? 'border-green-500 shadow-green-900/20' : 'border-slate-700 hover:border-blue-500';
-                const btnClass = isDone ? 'bg-slate-700 text-slate-300' : `bg-${color}-600 hover:bg-${color}-500 text-white`;
+                const btnClass = isDone ? 'bg-slate-700 text-slate-300' :   colorMap[color];
                 const btnText = isDone ? 'Revisar Módulo' : 'Iniciar Módulo';
                 
                 return `
                 <div class="bg-slate-800 rounded-xl p-6 border-2 transition-all hover:scale-105 ${borderColor}">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="bg-${color}-900/50 p-3 rounded-lg text-${color}-400">
+                        <div class="${cardColorMap[color]} p-3 rounded-lg">
                             <i data-lucide="${icon}" width="32" height="32"></i>
                         </div>
                         ${isDone ? '<i data-lucide="check-circle" class="text-green-500"></i>' : ''}
@@ -281,7 +287,7 @@
             ${feedbackHtml}
             <main class="p-6 max-w-4xl mx-auto">
                 <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-                    <i data-lucide="terminal" class="text-blue-500"</i> Painel de Módulos
+                    <i data-lucide="terminal" class="text-blue-500"></i> Painel de Módulos
                 </h2>
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     ${renderCard('module1', '1. Muralha Digital', 'Senhas fortes, MFA e identificação de Phishing.', 'purple', 'lock', p.m1)}
@@ -484,12 +490,12 @@
                 <div class="bg-white text-black p-12 w-full max-w-5xl shadow-2xl border-[20px] border-double border-slate-800 relative mx-auto" style="min-height: 700px;">
                     <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
                         <i data-lucide="shield" width="400" height="400"></i>
-                        <img src="/logosemfundo.png" class="mx-auto mb-4" style="width:200px; height:auto;">
+                        <img src="./logosemfundo.png" class="mx-auto mb-4" style="width:200px; height:auto;">
                     </div>
                     <div class="h-full flex flex-col items-center justify-between py-10 relative z-10 text-center">
                         <div class="w-full border-b-2 border-slate-300 pb-8 mb-8">
                             <div class="flex justify-center items-center gap-4 text-slate-800 mb-2">
-                                <img src="/logosemfundo.png" class="mx-auto mb-4" style="width:200px; height:auto;">
+                                <img src="./logosemfundo.png" class="mx-auto mb-4" style="width:200px; height:auto;">
                                 <i data-lucide="shield" width="48" height="48"></i>
                                 <h1 class="text-4xl font-serif font-bold tracking-wider">CERTIFICADO DE CONCLUSÃO</h1>
                             </div>
